@@ -74,3 +74,8 @@ MonoBehaviour:
     volume: 0.029
     pitch: 0.95
     source: {fileID: 0}
+  - name: UnlockSecret
+    clip: {fileID: 8300000, guid: 7478151cf36724a7dada558f746c3633, type: 3}
+    volume: 0.029
+    pitch: 0.95
+    source: {fileID: 0}
