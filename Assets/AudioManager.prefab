@@ -56,7 +56,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: PlayerJump
     clip: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
-    volume: 0.5
+    volume: 0.086
     pitch: 0.99
     source: {fileID: 0}
   - name: KeyFound
@@ -66,6 +66,11 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: ImpactGround
     clip: {fileID: 8300000, guid: 7bef0064f8567430cac22499c6b93d4f, type: 3}
-    volume: 0.507
+    volume: 0.042
     pitch: 1.03
+    source: {fileID: 0}
+  - name: ImpactCube
+    clip: {fileID: 8300000, guid: 0994c12e202f342459a4212e7287f7e8, type: 3}
+    volume: 0.029
+    pitch: 0.95
     source: {fileID: 0}

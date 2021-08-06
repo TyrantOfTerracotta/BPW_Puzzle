@@ -7,7 +7,7 @@ public class MenuScript : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Platformer1");
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void QuitGame()
