@@ -2,29 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShardTurretAI : MonoBehaviour
+public class missileFieldScript : MonoBehaviour
 {
+
     public Rigidbody bullet;
     public Transform barrelEnd;
     public Transform aimingTowards;
     
-    public float fireForce = 0f;
+    public float fireForce;
     public float lifeTimeBullet;
-    public float deltaFireRate;
-    public float cooldownTime;
+    public float canFire;
+ 
 
-    public bool cd;
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "Projectile")
+        {
+            Debug.Log("Firing a missile!");
+            canFire = 1.0f;
+
+            FindObjectOfType<AudioManager>().Play("ActivateMine");
+
+            //Destroy(obstacle.gameObject);
+
+            
+        }
+    }
+
 
     void Update()
     {
         barrelEnd.transform.LookAt(aimingTowards);
-            
-        if (cd == false)
-        {
-            deltaFireRate += Time.deltaTime;
-            if (deltaFireRate >= 1.0)
+
+            if (canFire == 1.0f)
             {
-                FindObjectOfType<AudioManager>().Play("TurretShot");
+                FindObjectOfType<AudioManager>().Play("LaunchMissile");
 
                 //Shooting
                 Rigidbody bulletInstance;
@@ -32,17 +44,7 @@ public class ShardTurretAI : MonoBehaviour
                 bulletInstance.AddForce(barrelEnd.forward * fireForce);
                 Destroy(bulletInstance.gameObject, lifeTimeBullet);
 
-
-                StartCoroutine(bulletTimer());
-                deltaFireRate = 0;
+                canFire = 0f;
             }
-        }
-    }
-
-    IEnumerator bulletTimer()
-    {
-        cd = true;
-        yield return new WaitForSeconds(cooldownTime);
-        cd = false;
     }
 }
