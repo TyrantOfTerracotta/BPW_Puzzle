@@ -55,7 +55,13 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
-        //barrelEnd.transform.LookAt(Camera.main.transform.forward); //Zorgt voor een soort aimbot naar de gespecificeerde positie. Lookat Mouse Pos zou interessant kunnen werken.
+        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit raycastHit))
+        {
+            barrelEnd.transform.LookAt(raycastHit.point);
+        }
+        
+        //barrelEnd.transform.LookAt(Input.mousePosition); //Geweer doet heel raar als dit aanstaat en gaat allerlei kanten op. Werkt soort van op een trippy manier, maar eigenlijk niet.
 
         if (Input.GetKeyDown(KeyCode.Space) && canDoubleJump < 2)  //OLD VERSION: "rbody.AddForce(new Vector3(0, jumpForce, 0));"
         {
