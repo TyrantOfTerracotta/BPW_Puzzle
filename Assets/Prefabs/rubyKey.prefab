@@ -106,5 +106,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 256992f55513ec944aa6b95b5c25dddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrier: {fileID: 0}
-  gateOrb: {fileID: 0}
+  barrier: {fileID: 4937955236539443781, guid: daf07cebc7b6d6a4392fb15fd162ce82, type: 3}
+  gateOrb: {fileID: 3637285041614691885, guid: 847bb30ce61dcf04ba61119bf9df5cc6, type: 3}
