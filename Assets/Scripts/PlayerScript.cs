@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//General helpful stuff:
+    //Logical operators for if-statements: 
+        //use || for OR (If either statements is true, it will be true.)
+        //use && for AND (statement is only true if ALL statements it is evaluating are true. Indeed, if either one doesn't, it won't work.)
+        //use == for EQUAL TO (if the set values in de condition are the same, it is true. Otherwise it's false.)
+
 public class PlayerScript : MonoBehaviour
 {
     //General player related
@@ -83,7 +89,7 @@ public class PlayerScript : MonoBehaviour
 
         
         //Alternate code for the gun, with a barrel in mind when aiming!
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetMouseButton(0) || Input.GetKey(KeyCode.Q)) //Input.GetKey(KeyCode.Q)
         {
             if (Time.time > fireRateTimeStamp)
             {

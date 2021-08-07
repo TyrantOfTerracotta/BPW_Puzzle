@@ -86,7 +86,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: LaunchMissile
     clip: {fileID: 8300000, guid: 7bef0064f8567430cac22499c6b93d4f, type: 3}
-    volume: 0.19
+    volume: 0.413
     pitch: 0.95
     source: {fileID: 0}
   - name: WrongAnswer
